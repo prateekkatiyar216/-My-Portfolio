@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <title>Prateek Katiyar | Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          animation: {
+            typing: 'typing 3.5s steps(30, end)',
+            'blink-caret': 'blink-caret 0.75s step-end infinite'
+          },
+          keyframes: {
+            typing: {
+              'from': { width: '0' },
+              'to': { width: '100%' }
+            },
+            'blink-caret': {
+              'from, to': { borderColor: 'transparent' },
+              '50%': { borderColor: 'orange' }
+            }
+          }
+        },
+      },
+      plugins: [],
+    }
+  </script>
+  <!-- Google Fonts for Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text {
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    /* Typing effect without cursor */
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      animation:
+        typing 3.3s steps(30, end) 1 normal both;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+  </style>
+</head>
+<body class="dark:bg-gray-900 dark:text-gray-200 bg-gray-50 text-gray-800 font-sans transition-colors duration-300">
+
+  <!-- Top Navigation Bar -->
+  <nav class="fixed w-full top-0 left-0 z-50 bg-white/80 dark:bg-gray-900/90 backdrop-blur border-b border-gray-200 dark:border-gray-800 shadow-sm transition">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <div class="flex-1">
+        <span class="typewriter text-lg md:text-xl font-bold tracking-wide text-gradient gradient-text">
+          👋 Welcome to my portfolio
+        </span>
+      </div>
+      <ul class="flex space-x-6 ml-auto">
+        <li><a href="#about" class="hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition">About</a></li>
+        <li><a href="#projects" class="hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition">Projects</a></li>
+        <li><a href="#certifications" class="hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition">Certifications</a></li>
+        <li><a href="#skills" class="hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition">Skills</a></li>
+        <li><a href="#contact" class="hover:text-cyan-500 dark:hover:text-cyan-400 font-medium transition">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="ml-6 md:ml-8 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition" aria-label="Toggle Dark Mode">
+        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"></path></svg>
+        <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section: Unique Layout with Picture -->
+  <section class="relative pt-32 pb-20 bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#203a43] dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 text-white overflow-hidden flex items-center justify-center" data-aos="fade-up" data-aos-duration="900">
+    <div class="max-w-6xl w-full flex flex-col-reverse sm:flex-row items-center justify-between px-4 gap-12 z-10">
+      <div class="flex-1 text-center sm:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 gradient-text">Prateek Katiyar</h1>
+        <p class="text-lg md:text-2xl mb-6 font-medium text-gray-100 dark:text-gray-300">
+          Coding Secure <span class="text-cyan-400">Digital Futures</span>
+        </p>
+        <div class="mb-6 flex justify-center sm:justify-start gap-4">
+          <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition">Contact Me</a>
+          <a href="#projects" class="bg-gray-800/70 hover:bg-gray-700 text-cyan-300 px-6 py-2 rounded-full font-semibold shadow-lg transition border border-cyan-600">View Projects</a>
+        </div>
+        <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+          <span class="bg-cyan-700 text-white px-3 py-1 rounded-full text-xs">Web Dev</span>
+          <span class="bg-cyan-800/60 text-cyan-200 px-3 py-1 rounded-full text-xs">Cybersecurity</span>
+          <span class="bg-cyan-800/60 text-cyan-200 px-3 py-1 rounded-full text-xs">ML</span>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center sm:justify-end">
+        <!-- Replace src with your image -->
+        <div class="relative group">
+          <img src="my.jpg" alt="Prateek's photo" class="w-48 h-48 rounded-full object-cover border-4 border-cyan-500 shadow-xl group-hover:scale-105 transition"/>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-cyan-700 px-3 py-1 rounded-lg text-xs text-white shadow-lg opacity-90">Let's Connect!</div>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative shapes -->
+    <div class="absolute top-0 left-0 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl -z-0"></div>
+    <div class="absolute bottom-0 right-10 w-60 h-60 bg-blue-600/30 rounded-full blur-3xl -z-0"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-3xl mx-auto px-6 py-16" data-aos="fade-up" data-aos-duration="900">
+    <h2 class="text-3xl font-bold mb-6 gradient-text">About Me</h2>
+    <p class="text-lg leading-relaxed">
+      Hello, I'm Prateek! 👋 I'm a software developer 💻 in my final year of a B.Tech degree 🎓, with a deep interest in the intersection of web development and cybersecurity 🛡️. I thrive on turning complex problems into elegant, efficient, and secure digital solutions 💡. My curiosity constantly pushes me to learn and experiment with emerging technologies 🚀, and I'm particularly excited about the potential of Machine Learning to shape the future. 🤖
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+<section id="projects" class="snap-section py-16 bg-gradient-to-b from-cyan-100/30 via-white to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-800" data-aos="fade-up" data-aos-duration="900">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 gradient-text">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-cyan-300 group-hover:underline">Suspicious Login Detection</h3>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">A system to detect suspicious login behavior using ML models.</p>
+        <a href="https://github.com/prateekkatiyar216/Suspicious-login-detection-" target="_blank" class="inline-block text-cyan-600 dark:text-cyan-400 font-medium hover:underline">View Project &rarr;</a>
+      </div>
+
+      <!-- Boston House Pricing Project Card -->
+      <div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-cyan-300 group-hover:underline">Boston House Pricing</h3>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          Machine learning project to predict Boston house prices using various regression algorithms and data visualization techniques.
+        </p>
+        <a href="https://github.com/prateekkatiyar216/bostonhousepricing" target="_blank" class="inline-block text-cyan-600 dark:text-cyan-400 font-medium hover:underline">
+          View Project &rarr;
+        </a>
+      </div>
+
+      <div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-cyan-300 group-hover:underline">Real-Time Object Tracking</h3>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">Real-time object tracking using computer vision.</p>
+        <a href="https://github.com/prateekkatiyar216/Real-Time-Object-Tracking" target="_blank" class="inline-block text-cyan-600 dark:text-cyan-400 font-medium hover:underline">View Project &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" class="max-w-7xl mx-auto px-4 md:px-10 py-16" data-aos="fade-up" data-aos-duration="900">
+  <h2 class="text-3xl font-bold mb-8 gradient-text">Certifications</h2>
+  <div class="relative">
+    <!-- Swiper Container -->
+    <div id="cert-swiper" class="overflow-hidden">
+      <!-- Certificate 1 (active by default) -->
+      <div class="cert-slide group flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow rounded-2xl px-0 py-8 border-l-4 border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_0_rgba(34,211,238,0.75)] hover:ring-2 hover:ring-cyan-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-gray-900" style="display: flex; min-height:320px;">
+        <img src="Ethical Hacking.jpg"
+             alt="Certified Ethical Hacker"
+             class="w-48 h-40 object-contain rounded-xl mx-auto md:mx-0 md:ml-8 shadow-lg border-2 border-cyan-200 dark:border-cyan-700 bg-white dark:bg-gray-900 transition-all group-hover:shadow-[0_0_24px_2px_rgba(34,211,238,0.5)]"/>
+        <div class="flex-1 mt-8 md:mt-0 md:pl-12 pr-4 text-center md:text-left max-w-3xl">
+          <div class="font-semibold text-xl mb-1">Learn Ethical Hacking From Scratch 2024</div>
+          <div class="text-sm mb-2 text-gray-500 dark:text-gray-400"> 🔐 Mastering Cybersecurity Fundamentals</div>
+          <div class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            This certification 🏆 demonstrates the successful completion of the Learn Ethical Hacking From Scratch 2024 course on Udemy. Covering 15.5 hours of in-depth training, it equips learners with essential skills in ethical hacking, penetration testing, and cybersecurity practices 🔍. Guided by expert instructor Zaid Sabih from z Security, the program builds strong foundations in securing systems, identifying vulnerabilities, and defending against cyber threats ⚡. Achieving this certificate highlights dedication, technical proficiency, and hands-on experience in modern ethical hacking 💻, preparing for roles in cybersecurity and IT security domains.
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 2 -->
+      <div class="cert-slide group flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow rounded-2xl px-0 py-8 border-l-4 border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_0_rgba(34,211,238,0.75)] hover:ring-2 hover:ring-cyan-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-gray-900" style="display: none; min-height:320px;">
+        <img src="CISCO NA.png"
+             alt="Python for Everybody"
+             class="w-48 h-40 object-contain rounded-xl mx-auto md:mx-0 md:ml-8 shadow-lg border-2 border-cyan-200 dark:border-cyan-700 bg-white dark:bg-gray-900 transition-all group-hover:shadow-[0_0_24px_2px_rgba(34,211,238,0.5)]"/>
+        <div class="flex-1 mt-8 md:mt-0 md:pl-12 pr-4 text-center md:text-left max-w-3xl">
+          <div class="font-semibold text-xl mb-1">🎓Cisco Networking Academy – Ethical Hacker</div>
+          <div class="text-sm mb-2 text-gray-500 dark:text-gray-400">🔒 Building Skills in Cybersecurity & Ethical Hacking</div>
+          <div class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            This certification 🏆 recognizes the successful completion of the Ethical Hacker program offered by Cisco Networking Academy. It validates strong foundations in penetration testing, system security, and vulnerability assessment ⚡. Through hands-on learning, it develops expertise in detecting, analyzing, and preventing cyber threats while following ethical guidelines 🔍. Earning this certificate showcases commitment to cybersecurity excellence, problem-solving skills, and readiness to apply industry-standard techniques 💻. With guidance from Cisco’s global platform 🌐, this achievement highlights preparedness for cybersecurity, IT defense, and ethical hacking roles in today’s fast-evolving digital world.
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 3 -->
+      <div class="cert-slide group flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 shadow rounded-2xl px-0 py-8 border-l-4 border-cyan-500 transition-all duration-500 hover:shadow-[0_0_30px_0_rgba(34,211,238,0.75)] hover:ring-2 hover:ring-cyan-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-gray-900" style="display: none; min-height:320px;">
+        <img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+             alt="Responsive Web Design"
+             class="w-48 h-40 object-contain rounded-xl mx-auto md:mx-0 md:ml-8 shadow-lg border-2 border-cyan-200 dark:border-cyan-700 bg-white dark:bg-gray-900 transition-all group-hover:shadow-[0_0_24px_2px_rgba(34,211,238,0.5)]"/>
+        <div class="flex-1 mt-8 md:mt-0 md:pl-12 pr-4 text-center md:text-left max-w-3xl">
+          <div class="font-semibold text-xl mb-1">Responsive Web Design</div>
+          <div class="text-sm mb-2 text-gray-500 dark:text-gray-400">freeCodeCamp &mdash; 2022</div>
+          <div class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            Mastered modern HTML and CSS to create mobile-first, responsive layouts and interactive web experiences. The curriculum included over 300 hours of hands-on coding, covering Flexbox, CSS Grid, and accessibility best practices. Built a variety of projects such as landing pages, forms, and portfolios, emphasizing clean code and cross-browser compatibility. This certification reflects my commitment to building user-friendly digital experiences and my ability to adapt to the fast-changing landscape of frontend web development.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper Buttons -->
+    <button id="cert-prev" aria-label="Prev Certificate"
+      class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-2 shadow-lg transition disabled:opacity-30"
+      style="z-index:2;">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button id="cert-next" aria-label="Next Certificate"
+      class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-2 shadow-lg transition disabled:opacity-30"
+      style="z-index:2;">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Dots/Pagination -->
+  <div id="cert-dots" class="flex justify-center mt-6 gap-3">
+    <button class="cert-dot w-3 h-3 rounded-full bg-cyan-500 opacity-80"></button>
+    <button class="cert-dot w-3 h-3 rounded-full bg-cyan-300 opacity-60"></button>
+    <button class="cert-dot w-3 h-3 rounded-full bg-cyan-300 opacity-60"></button>
+  </div>
+</section>
+<!-- ...rest of the file remains unchanged below... -->
+
+<!-- Include at the end of body -->
+<script>
+  // Certification Swiper
+  const certSlides = document.querySelectorAll('.cert-slide');
+  const certDots = document.querySelectorAll('.cert-dot');
+  let currentCert = 0;
+
+  function showCert(idx) {
+    certSlides.forEach((slide, i) => {
+      slide.style.display = idx === i ? 'flex' : 'none';
+    });
+    certDots.forEach((dot, i) => {
+      dot.classList.toggle('bg-cyan-500', idx === i);
+      dot.classList.toggle('bg-cyan-300', idx !== i);
+      dot.style.opacity = idx === i ? '0.8' : '0.6';
+    });
+    document.getElementById('cert-prev').disabled = idx === 0;
+    document.getElementById('cert-next').disabled = idx === certSlides.length - 1;
+  }
+  certDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentCert = i;
+      showCert(currentCert);
+    });
+  });
+  document.getElementById('cert-prev').addEventListener('click', () => {
+    if (currentCert > 0) {
+      currentCert--;
+      showCert(currentCert);
+    }
+  });
+  document.getElementById('cert-next').addEventListener('click', () => {
+    if (currentCert < certSlides.length - 1) {
+      currentCert++;
+      showCert(currentCert);
+    }
+  });
+  showCert(currentCert);
+</script>
+
+  <!-- SKILLS SECTION WITH CARDS, CATEGORY COLORS, ICONS, AND NEON GLOW ON HOVER -->
+<section id="skills" class="max-w-6xl mx-auto px-4 md:px-10 py-16" data-aos="fade-up" data-aos-duration="900">
+  <h2 class="text-3xl font-bold mb-10 gradient-text">Skills</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Web Development -->
+    <div class="bg-blue-50 dark:bg-blue-900 rounded-2xl shadow p-6 transition-all duration-300 hover:shadow-[0_0_32px_0_rgba(59,130,246,0.6)] hover:ring-2 hover:ring-blue-400 hover:ring-offset-2 hover:ring-offset-blue-50 dark:hover:ring-offset-blue-900">
+      <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4 flex items-center">
+        <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Web Development
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-5 h-5 mr-2" alt="HTML"/>HTML
+        </span>
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-5 h-5 mr-2" alt="CSS"/>CSS
+        </span>
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-5 h-5 mr-2" alt="JavaScript"/>JavaScript
+        </span>
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5 mr-2" alt="React"/>React
+        </span>
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" class="w-5 h-5 mr-2" alt="Tailwind CSS"/>Tailwind CSS
+        </span>
+        <span class="flex items-center bg-white dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="w-5 h-5 mr-2" alt="Flask"/>Flask
+        </span>
+      </div>
+    </div>
+
+    <!-- Programming & DSA -->
+    <div class="bg-green-50 dark:bg-green-900 rounded-2xl shadow p-6 transition-all duration-300 hover:shadow-[0_0_32px_0_rgba(34,197,94,0.6)] hover:ring-2 hover:ring-green-400 hover:ring-offset-2 hover:ring-offset-green-50 dark:hover:ring-offset-green-900">
+      <h3 class="text-xl font-semibold text-green-800 dark:text-green-200 mb-4 flex items-center">
+        <svg class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M8 17l4 4 4-4m-4-5v9"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Programming & DSA
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="flex items-center bg-white dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5 mr-2" alt="Python"/>Python
+        </span>
+        <span class="flex items-center bg-white dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-5 h-5 mr-2" alt="Java"/>Java
+        </span>
+        <span class="flex items-center bg-white dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h9l7 7v9a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8"/></svg>
+          DSA
+        </span>
+        <span class="flex items-center bg-white dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7 10l5 5 5-5"/></svg>
+          OOPS Programming
+        </span>
+        <span class="flex items-center bg-white dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+          MySQL
+        </span>
+      </div>
+    </div>
+
+    <!-- Cyber Security & Networking -->
+    <div class="bg-cyan-50 dark:bg-cyan-900 rounded-2xl shadow p-6 transition-all duration-300 hover:shadow-[0_0_32px_0_rgba(6,182,212,0.6)] hover:ring-2 hover:ring-cyan-400 hover:ring-offset-2 hover:ring-offset-cyan-50 dark:hover:ring-offset-cyan-900">
+      <h3 class="text-xl font-semibold text-cyan-800 dark:text-cyan-200 mb-4 flex items-center">
+        <svg class="w-6 h-6 mr-2 text-cyan-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Cyber Security & Networking
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="flex items-center bg-white dark:bg-cyan-800 text-cyan-800 dark:text-cyan-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-5 h-5 mr-2" alt="Linux"/>Linux
+        </span>
+        <span class="flex items-center bg-white dark:bg-cyan-800 text-cyan-800 dark:text-cyan-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-2-2h-4V4a2 2 0 00-2-2H7a2 2 0 00-2 2v2H1a2 2 0 00-2 2v8a2 2 0 002 2h4v2a2 2 0 002 2h6a2 2 0 002-2v-2h4a2 2 0 002-2z"/></svg>
+          Computer Network
+        </span>
+        <span class="flex items-center bg-white dark:bg-cyan-800 text-cyan-800 dark:text-cyan-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Operating System
+        </span>
+        <span class="flex items-center bg-white dark:bg-cyan-800 text-cyan-800 dark:text-cyan-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Ethical Hacking
+        </span>
+      </div>
+    </div>
+
+    <!-- Machine Learning & Tools -->
+    <div class="bg-purple-50 dark:bg-purple-900 rounded-2xl shadow p-6 transition-all duration-300 hover:shadow-[0_0_32px_0_rgba(168,85,247,0.6)] hover:ring-2 hover:ring-purple-400 hover:ring-offset-2 hover:ring-offset-purple-50 dark:hover:ring-offset-purple-900">
+      <h3 class="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-4 flex items-center">
+        <svg class="w-6 h-6 mr-2 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20v-6m0 0l-4 4m4-4l4 4M12 4v6m0 0l-4-4m4 4l4-4"/></svg>
+        Machine Learning & Tools
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5 mr-2" alt="Python"/>Machine Learning
+        </span>
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-5 h-5 mr-2" alt="NumPy"/>NumPy
+        </span>
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-5 h-5 mr-2" alt="Pandas"/>Pandas
+        </span>
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-5 h-5 mr-2" alt="TensorFlow"/>TensorFlow
+        </span>
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg" class="w-5 h-5 mr-2" alt="Scikit-Learn"/>Scikit-Learn
+        </span>
+        <span class="flex items-center bg-white dark:bg-purple-800 text-purple-800 dark:text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="w-5 h-5 mr-2" alt="Matplotlib"/>Matplotlib
+        </span>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="bg-orange-50 dark:bg-orange-900 rounded-2xl shadow p-6 md:col-span-2 transition-all duration-300 hover:shadow-[0_0_32px_0_rgba(251,146,60,0.6)] hover:ring-2 hover:ring-orange-400 hover:ring-offset-2 hover:ring-offset-orange-50 dark:hover:ring-offset-orange-900">
+      <h3 class="text-xl font-semibold text-orange-700 dark:text-orange-200 mb-4 flex items-center">
+        <svg class="w-6 h-6 mr-2 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M19 9l-7 7-7-7"/></svg>
+        Soft Skills
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2l4 -4" /></svg>
+          Problem Solving
+        </span>
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="16" r="3"/><path d="M13 16v-5a1 1 0 0 1 1-1h5"/></svg>
+          Teamwork
+        </span>
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20v-6m0 0l-4 4m4-4l4 4"/></svg>
+          Adaptability
+        </span>
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12v2a4 4 0 008 0v-2"/></svg>
+          Communication
+        </span>
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 10.5V17a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h6.5"/></svg>
+          Leadership
+        </span>
+        <span class="flex items-center bg-white dark:bg-orange-800 text-orange-700 dark:text-orange-100 px-4 py-2 rounded-full text-sm font-medium shadow">
+          <svg class="w-5 h-5 mr-2 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Critical Thinking
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gradient-to-t from-cyan-100/30 via-white to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-800" data-aos="fade-up" data-aos-duration="900">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Contact</h2>
+      <p class="mb-8 text-lg">Let's connect! Fill out the form below or find me on:</p>
+      <div class="flex justify-center gap-6 mb-8">
+        <a href="https://www.linkedin.com/in/prateekkatiyar216" target="_blank" title="LinkedIn" class="text-cyan-700 dark:text-cyan-300 text-3xl hover:scale-110 transition"><svg class="inline w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 19h-3v-9h3v9zm-1.5-10.3c-.96 0-1.5-.65-1.5-1.46 0-.83.56-1.46 1.54-1.46s1.5.63 1.5 1.46c0 .81-.54 1.46-1.54 1.46zm14.5 10.3h-3v-4.5c0-1.07-.38-1.8-1.31-1.8-.72 0-1.15.49-1.34.96-.07.17-.09.41-.09.65v4.69h-3s.04-7.61 0-9h3v1.28c.4-.62 1.12-1.5 2.71-1.5 1.98 0 3.46 1.29 3.46 4.06v5.16z"/></svg></a>
+        <a href="https://github.com/prateekkatiyar216" target="_blank" title="GitHub" class="text-cyan-700 dark:text-cyan-300 text-3xl hover:scale-110 transition"><svg class="inline w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.37 7.86 10.87.58.11.79-.25.79-.56v-2.03c-3.2.69-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.08 0 0 .97-.31 3.18 1.18a11.1 11.1 0 012.9-.39c.98.01 1.97.13 2.9.39 2.21-1.5 3.18-1.18 3.18-1.18.63 1.61.23 2.79.11 3.08.74.81 1.19 1.84 1.19 3.1 0 4.44-2.69 5.41-5.25 5.7.43.37.81 1.1.81 2.21v3.27c0 .31.21.67.8.56C20.71 21.37 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg></a>
+        <a href="https://leetcode.com/prateekkatiyar216" target="_blank" title="LeetCode" class="text-cyan-700 dark:text-cyan-300 text-3xl hover:scale-110 transition">
+          <img src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode" class="h-7 w-7 inline rounded"/>
+        </a>
+        <a href="https://www.hackerrank.com/prateekkatiyar216" target="_blank" title="HackerRank" class="text-cyan-700 dark:text-cyan-300 text-3xl hover:scale-110 transition">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/hackerrank-3521515-2945099.png" alt="HackerRank" class="h-7 w-7 inline rounded"/>
+        </a>
+      </div>
+      <form class="max-w-xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-xl shadow space-y-6 border border-cyan-100 dark:border-gray-800" name="contact" method="POST" data-netlify="true">
+        <div class="flex flex-col gap-2">
+          <label for="name" class="text-left font-semibold text-cyan-700 dark:text-cyan-300">Name</label>
+          <input type="text" id="name" name="name" required class="px-4 py-2 rounded-lg border border-cyan-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-cyan-500 outline-none"/>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="email" class="text-left font-semibold text-cyan-700 dark:text-cyan-300">Email</label>
+          <input type="email" id="email" name="email" required class="px-4 py-2 rounded-lg border border-cyan-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-cyan-500 outline-none"/>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="message" class="text-left font-semibold text-cyan-700 dark:text-cyan-300">Message</label>
+          <textarea id="message" name="message" rows="4" required class="px-4 py-2 rounded-lg border border-cyan-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-cyan-500 outline-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-3 rounded-lg shadow-lg transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-6 text-center text-sm">
+    &copy; 2025 Prateek Katiyar. All rights reserved.
+  </footer>
+
+  <!-- Smooth Scroll on Nav Clicks with offset for nav bar -->
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const section = document.querySelector(href);
+          if (section) {
+            window.scrollTo({
+              top: section.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Dark Mode Toggle Script -->
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  // Load theme from localStorage
+  if (localStorage.getItem('theme') === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    sunIcon.classList.remove('hidden');
+  } else {
+    moonIcon.classList.remove('hidden');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    sunIcon.classList.toggle('hidden');
+    moonIcon.classList.toggle('hidden');
+    localStorage.setItem('theme',
+      document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+    );
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once:  false,
+    offset: 40 // Triggers the animation a bit before the section is fully in view
+  });
+</script>
+</body>
+</html>
