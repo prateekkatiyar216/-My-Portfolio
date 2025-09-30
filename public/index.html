@@ -430,13 +430,13 @@
 
     <!-- Netlify working form -->
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="max-w-xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-xl shadow space-y-6 border border-cyan-100 dark:border-gray-800">
-      <!-- Netlify hidden inputs -->
+      <!-- Netlify required hidden input -->
       <input type="hidden" name="form-name" value="contact" />
+      <!-- Netlify honeypot for spam -->
       <p class="hidden">
         <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
       </p>
 
-      <!-- Form Fields -->
       <div class="flex flex-col gap-2">
         <label for="name" class="text-left font-semibold text-cyan-700 dark:text-cyan-300">Name</label>
         <input type="text" id="name" name="name" required class="px-4 py-2 rounded-lg border border-cyan-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-cyan-500 outline-none"/>
@@ -452,12 +452,11 @@
         <textarea id="message" name="message" rows="4" required class="px-4 py-2 rounded-lg border border-cyan-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-cyan-500 outline-none"></textarea>
       </div>
 
-      <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-3 rounded-lg shadow-lg transition">
-        Send Message
-      </button>
+      <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-3 rounded-lg shadow-lg transition">Send Message</button>
     </form>
   </div>
 </section>
+
 
 
   <!-- Footer -->
